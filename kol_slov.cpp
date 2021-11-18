@@ -29,8 +29,8 @@ string itc_maxCharWord(string str)
 {
     long long len = itc_len(str), count = 0;
     string nov, result = "";
-    for(int i = 0; i < len + 1; i++){
-        if((str[i] == ' ' or str[i] == '\0') and (itc_len(nov) > itc_len(result))){
+    for(int i = 0; i < len; i++){
+        if((str[i] == ' ' or str[i + 1] == '\0') and (itc_len(nov) > itc_len(result))){
             result = nov;
             nov = "";
         }
