@@ -67,18 +67,10 @@ char itc_sameChar(string str){
 }
 
 bool itc_isFirstInSecond(string s1, string s2){
-    long long len1 = itc_len(s1), len2 = itc_len(s2), count = 0;
-    string nov;
-    int vhod = itc_find_str(s2, s1);
-    if(s1 == "" or s2 == ""){
-        return false;
-    }
-    if(vhod != -1){
-        return true;
-    }
-    else
-    {
-        return false;
+    for(int i = 0; itc_len(itc_slice_str(s2, i, i + itc_len(s1) - 1)) == itc_len(s1); i++){
+        if(itc_slice_str(s2, i, i + itc_len(s1) - 1) == s1){
+            return true;
+        }
     }
     return false;
 }
