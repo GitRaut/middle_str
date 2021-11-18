@@ -67,7 +67,14 @@ char itc_sameChar(string str){
 }
 
 bool itc_isFirstInSecond(string s1, string s2){
-	if (itc_find_str(s2, s1) != -1)
-		return true;
-	return false;
+    if(s1 == ""){
+        return false;
+    }
+    if(s2 == ""){
+        return false;
+    }
+	if (itc_find_str(s2, s1) == -1){
+		return false;
+	}
+	return true;
 }
