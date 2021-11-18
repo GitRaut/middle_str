@@ -3,21 +3,34 @@
 string itc_Cezar(string str, int k){
     long long len = itc_len(str);
     char point = k;
+    string otv;
+    string big = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string small = "abcdefghijklmnopqrstuvwxyz";
     if(str == ""){
         return "";
     }
-    k = (k % 26) + k;
+    k = (k + 26) % 26;
+    char pos;
     for(int i = 0; i < len; i++){
-        if(str[i] >= 'A' and str[i] <= 'Z'){
-            str[i] = str[i] - 'A' + point;
-            str[i] = str[i] % 26 + 'A';
-        }
         if(str[i] >= 'a' and str[i] <= 'z'){
-            str[i] = str[i] - 'a' + point;
-            str[i] = str[i] % 26 + 'a';
+            pos = 25 - ('z' - str[i]);
+            if(pos + k > 25){
+                pos = 25 - pos - 1;
+            }
+            otv += small[pos + k];
+        }
+        else if(str[i] >= 'A' and str[i] <= 'Z'){
+            pos = 25 - ('Z' - str[i]);
+            if(pos + k > 25){
+                pos = 25 - pos - 1;
+            }
+            otv += big[pos + k];
+        }
+        else{
+            otv += str[i];
         }
     }
-    return str;
+    return otv;
 }
 
 
