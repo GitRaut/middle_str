@@ -23,19 +23,6 @@ int itc_countWords(string str)
         }
     }
     return flag;
-    /*int count = 0;
-    for(int i = 0; i < itc_len(str); i++){
-        if (str[i] == ' ' and str[i + 1] != ' ' and str[i + 1] != '\0'){
-            count++;
-        }
-        if(str[i] != ' ' and (str[i] < 'A' or (str[i] > 'Z' and str[i] < 'a') or (str[i] > 'z' and str[i] < 128))){
-            count--;
-        }
-    }
-    if(count < 0){
-        return 0;
-    }
-    return count + 1;*/
 }
 
 string itc_maxCharWord(string str)
