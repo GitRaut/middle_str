@@ -6,7 +6,7 @@ string itc_Cezar(string str, int k){
     for(int i = 0; i < len; i++){
         if(str[i] >= 'A' and str[i] <= 'Z'){
             str[i] = str[i] - 'A' + point;
-            str[i] = str[i] % 26 = 'A';
+            str[i] = str[i] % 26 + 'A';
         }
         if(str[i] >= 'a' and str[i] <= 'z'){
             str[i] = str[i] - 'a' + point;
