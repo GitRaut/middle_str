@@ -3,6 +3,9 @@
 string itc_Cezar(string str, int k){
     long long len = itc_len(str);
     char point = k;
+    if(str == ""){
+        return "";
+    }
     for(int i = 0; i < len; i++){
         if(str[i] >= 'A' and str[i] <= 'Z'){
             str[i] = str[i] - 'A' + point;
