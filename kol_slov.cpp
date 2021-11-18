@@ -70,6 +70,9 @@ bool itc_isFirstInSecond(string s1, string s2){
     long long len1 = itc_len(s1), len2 = itc_len(s2), count = 0;
     string nov;
     int vhod = itc_find_str(s2, s1);
+    if(s1 == "" or s2 == ""){
+        return false;
+    }
     if(vhod != -1){
         return true;
     }
