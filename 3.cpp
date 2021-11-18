@@ -3,6 +3,7 @@
 string itc_Cezar(string str, int k){
     long long len = itc_len(str);
     char point = k;
+    string otv;
     for(int i = 0; i < len; i++){
         if(str[i] >= 'A' and str[i] <= 'Z'){
             str[i] = str[i] + point;
@@ -12,8 +13,9 @@ string itc_Cezar(string str, int k){
             if(str[i] < 'A'){
                 str[i] = str[i] + 26;
             }
+            otv += str[i];
         }
-        if(str[i] >= 'a' and str[i] <= 'z'){
+        else if(str[i] >= 'a' and str[i] <= 'z'){
             str[i] = str[i] + point;
             if(str[i] > 'z'){
                 str[i] = str[i] - 26;
@@ -21,9 +23,13 @@ string itc_Cezar(string str, int k){
             if(str[i] < 'a'){
                 str[i] = str[i] + 26;
             }
+            otv += str[i];
+        }
+        else{
+            otv += str[i];
         }
     }
-    return str;
+    return otv;
 }
 
 string itc_rmFreeSpace(string str){
