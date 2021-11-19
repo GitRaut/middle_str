@@ -68,6 +68,9 @@ char itc_sameChar(string str){
 
 bool itc_isFirstInSecond(string s1, string s2){
     int len1 = itc_len(s1), len2 = itc_len(s2);
+    if(s1 == ""){
+        return true;
+    }
     for(int i = 0; i < len2; i++){
         if(len2 - i < len1){
             return false;
