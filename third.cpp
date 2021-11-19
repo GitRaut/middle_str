@@ -85,19 +85,22 @@ bool itc_isIp(string str){
 }
 
 string itc_DecToBin(string str){
-    long long len = itc_len(str), number, num;
-    string point, result;
+    long long len = itc_len(str), number;
+    string point = "", result = "";
+    if(str == ""){
+        return "";
+    }
     for(int i = 0; i < len + 1; i++){
         if(str[i] >= '0' and str[i] <= '9'){
             point += str[i];
         }
         else{
             number = itc_ToInt(point);
-            num = itc_bin_num(number);
+            number = itc_bin_num(number);
             if(point != ""){
-                result += itc_ToString(num) + str[i];
+                result += itc_ToString(number);
             }
-            if(point == ""){
+            if(str[i] != '\0'){
                 result += str[i];
             }
             point = "";
